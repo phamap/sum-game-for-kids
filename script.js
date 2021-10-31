@@ -15,10 +15,32 @@
 
   let firstNum;
   let secondNum;
+  const increment = 282;
+  let sum = 40;
+  let attackSum = 10;
+  let attackInterval, idleInterval, dieInterval, bossWinInterval;
+
+  idleInterval = setInterval(() => {
+    htmlImg.style.backgroundPosition = `-${sum}px -270px`;
+    sum += increment;
+    if (sum > 1600) {
+      sum = 40;
+    }
+  }, 100);
 
   generateRandom();
 
   input.addEventListener('keydown', (e) => {
+    clearInterval(idleInterval);
+    if (!attackInterval) {
+      attackInterval = setInterval(() => {
+        htmlImg.style.backgroundPosition = `-${attackSum}px -840px`;
+        attackSum += increment;
+        if (attackSum > 1600) {
+          attackSum = 10;
+        }
+      }, 100);
+    }
     if(e.key === 'Enter') {
       results.push({
         exercise: `${firstNum} + ${secondNum} = ${e.target.value}`,
@@ -28,9 +50,30 @@
       if (results.length < 20) {
         generateRandom();
       } else {
-        htmlMessage.innerHTML = checkResult(results) ? messages.success : messages.error;
-        htmlImg.classList.add(checkResult(results) ? 'lose' : 'win');
+        clearInterval(attackInterval);
         htmlExercise.classList.add('hide');
+
+        if (checkResult(results)) {
+          htmlMessage.innerHTML = messages.success;
+          htmlImg.classList.add('lose');
+          dieInterval = setInterval(() => {
+            htmlImg.style.backgroundPosition = `-${sum}px -2530px`;
+            sum += increment;
+            if (sum > 1600) {
+              clearInterval(dieInterval);
+            }
+          }, 100);
+        } else {
+          htmlMessage.innerHTML = messages.error;
+          htmlImg.classList.add('win');
+          bossWinInterval = setInterval(() => {
+            htmlImg.style.backgroundPosition = `-${sum}px -1400px`;
+            sum += increment;
+            if (sum > 1600) {
+              sum = 40;
+            }
+          }, 100);
+        }
         updateResults(results);
       }
     }

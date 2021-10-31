@@ -42,7 +42,7 @@ input:focus {
 
 .img {
     min-height: 300px;
-    min-width: 200px;
+    min-width: 260px;
     background: url('assets/Minotaur - Sprite Sheet.png');
     background-size: 3000px;
     background-position: -40px 10px;
@@ -80,4 +80,25 @@ input:focus {
 
 .exercise {
     margin-top: 85px;
+}
+
+@keyframes monster-idle {
+    0% {
+        background-position: -40px -270px;
+    }
+    20% {
+        background-position: -340px -270px;
+    }
+    40% {
+        background-position: -640px -270px;
+    }
+    60% {
+        background-position: -940px -270px;
+    }
+    80% {
+        background-position: -1240px -270px;
+    }
+    100% {
+        background-position: -1540px -270px;
+    }
 }
