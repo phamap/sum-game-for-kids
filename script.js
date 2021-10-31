@@ -1,5 +1,6 @@
 (() => {
   const max = 10;
+  const min = 2;
   const firsHtmlNum = document.querySelector('#firstNum');
   const secondHtmlNum = document.querySelector('#secondNum');
   const htmlMessage = document.querySelector('#message');
@@ -101,8 +102,8 @@
 
   function generateRandom() {
     input.value = 0;
-    firstNum = getRandomInt(2, max);
-    secondNum = getRandomInt(2, max - firstNum);
+    firstNum = getRandomInt(min, max);
+    secondNum = getRandomInt(min, max - firstNum);
     firsHtmlNum.innerHTML = firstNum;
     secondHtmlNum.innerHTML = secondNum;
   }
