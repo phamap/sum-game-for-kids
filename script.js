@@ -101,8 +101,8 @@
 
   function generateRandom() {
     input.value = 0;
-    firstNum = getRandomInt(1, max);
-    secondNum = getRandomInt(1, max - firstNum);
+    firstNum = getRandomInt(2, max);
+    secondNum = getRandomInt(2, max - firstNum);
     firsHtmlNum.innerHTML = firstNum;
     secondHtmlNum.innerHTML = secondNum;
   }
