@@ -19,7 +19,7 @@
     error: 'Тебе не хватило совсем чуть-чуть. \nВ следующий раз ты обязательно справишься!'
   };
   const results = [];
-  const questionCount = 2;
+  const questionCount = 20;
 
   let max = 10;
   let min = 3;
