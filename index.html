@@ -10,15 +10,19 @@
 <body>
 <div class="container">
     <h1>Сразись с математическим монстром!!!</h1>
-    <h3>Уровень сложности</h3>
-    <div>
-        <label><input type="radio" name="levels"> Легко</label>
-        <label style="margin: 0 20px"><input type="radio" name="levels"> Средне</label>
-        <label><input type="radio" name="levels"> Сложно</label>
+    <h3>Уровень сложности <span id="cLevel"></span></h3>
+    <div id="levels">
+        <label><input type="radio" name="levels" value="1">Легко</label>
+        <label style="margin: 0 20px"><input type="radio" name="levels" value="2">Средне</label>
+        <label><input type="radio" name="levels" value="3">Сложно</label>
     </div>
     <div class="battle">
+        <div id="hearts"><span>&#10084;</span><span>&#10084;</span><span>&#10084;</span></div>>
         <div class="minotaur"></div>
-        <div class="fox"></div>
+        <div class="trap">
+            <div class="cage"></div>
+            <div class="fox"></div>
+        </div>
     </div>
     <div class="exercise">
         <div id="firstNum" class="numbers"></div>
@@ -34,6 +38,7 @@
         <div id="message"></div>
         <div id="resList"></div>
     </div>
+    <br><br>
 </div>
 <script src="script.js"></script>
 </body>

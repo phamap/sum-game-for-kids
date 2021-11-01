@@ -17,6 +17,10 @@ h1 {
     line-height: 1.3;
 }
 
+h3 {
+    font-size: 1.5rem;
+}
+
 .numbers {
     display: inline-block;
     margin: 0 10px;
@@ -39,6 +43,7 @@ input:focus {
     align-items: flex-start;
     justify-content: space-around;
     position: relative;
+    overflow: hidden;
     width: 656px;
     height: 344px;
     background: url('assets/bg.gif') center/cover;
@@ -48,23 +53,20 @@ input:focus {
 .minotaur {
     min-height: 300px;
     min-width: 260px;
-    background: url('assets/Minotaur - Sprite Sheet (2).png');
+    background: url('assets/Minotaur - Sprite Sheet (2).png') -40px 10px;
     background-size: 3000px;
-    background-position: -40px 10px;
     position: absolute;
     left: 60px;
     bottom: -55px;
 }
 
 .fox {
-    min-height: 70px;
-    min-width: 70px;
-    background: url('assets/Fox Sprite Sheet.png');
-    background-size: 1500px;
-    background-position: -20px -40px;
+    min-height: 80px;
+    min-width: 80px;
+    background: url('assets/Fox-Sprite-Sheet.gif') no-repeat -9px 19px;
     position: absolute;
-    right: 145px;
-    bottom: 48px;
+    right: 25px;
+    bottom: 2px;
     transform: scale(-1, 1);
 }
 
@@ -77,7 +79,7 @@ input:focus {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .results {
@@ -96,9 +98,14 @@ input:focus {
     list-style-type: none;
     padding: 0;
     margin: 20px 0 30px;
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 1px solid #000;
+    font-size: 1.5rem;
 }
 
 .exercise {
+    display: none;
 }
 
 @keyframes monster-idle {
@@ -148,4 +155,39 @@ input:focus {
 #answer:active {
     position: relative;
     top: 1px;
+}
+
+#answer[disabled] {
+    opacity: .5;
+}
+
+#hearts {
+    color: #f00;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.cage {
+    width: 125px;
+    height: 300px;
+    background: url('assets/cage.png') no-repeat bottom/cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+}
+
+.trap {
+    position: absolute;
+    right: 120px;
+    bottom: 45px;
+    width: 125px;
+    height: 100px;
+    transition: bottom .5s ease-in-out;
+}
+
+.trap.active {
+    bottom: 115px;
 }
