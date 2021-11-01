@@ -210,7 +210,7 @@
   }
 
   function generateRandom() {
-    input.value = 0;
+    input.value = '';
     input.focus();
     if (!(results.length % 2)) {
       firstNum = getRandomInt(5, max);
