@@ -13,6 +13,7 @@
   const htmlHearts = document.querySelector('#hearts');
   const htmlCage = document.querySelector('.cage');
   const htmlTrap = document.querySelector('.trap');
+  const htmlResetBtn = document.querySelector('#resetBtn');
 
   const messages = {
     success: 'Поздравляю, монстр был побежден! Тебе нет равных в математике!',
@@ -51,11 +52,15 @@
           max = 10;
           min = 2;
       }
-      htmlExercise.style.display = 'block';
+      htmlExercise.style.display = 'flex';
       htmlLevels.style.display = 'none';
       htmlCLevel.innerHTML = e.target.value;
       generateRandom();
     }
+  });
+
+  htmlResetBtn.addEventListener('click', () => {
+    location.reload();
   });
 
   startIdleAnimation();
@@ -189,6 +194,7 @@
       el.appendChild(li);
     });
     htmlRes.append(el);
+    htmlResetBtn.classList.remove('hide');
   }
 
   function checkResult(results) {
