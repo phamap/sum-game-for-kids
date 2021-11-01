@@ -1,6 +1,6 @@
 <html lang="html">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Сразись с математическим монстром</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,21 +10,29 @@
 <body>
 <div class="container">
     <h1>Сразись с математическим монстром!!!</h1>
-    <div class="monster">
-        <div class="img"></div>
-        <div class="exercise">
-            <div id="firstNum" class="numbers"></div>
-            <div class="numbers"> + </div>
-            <div id="secondNum" class="numbers"></div>
-            <label class="numbers">
-                =
-                <input type="number" name="" class="numbers" style="width: 120px" autofocus>
-            </label>
-        </div>
-        <div class="results">
-            <div id="message"></div>
-            <div id="resList"></div>
-        </div>
+    <h3>Уровень сложности</h3>
+    <div>
+        <label><input type="radio" name="levels"> Легко</label>
+        <label style="margin: 0 20px"><input type="radio" name="levels"> Средне</label>
+        <label><input type="radio" name="levels"> Сложно</label>
+    </div>
+    <div class="battle">
+        <div class="minotaur"></div>
+        <div class="fox"></div>
+    </div>
+    <div class="exercise">
+        <div id="firstNum" class="numbers"></div>
+        <div id="sign" class="numbers"> +</div>
+        <div id="secondNum" class="numbers"></div>
+        <label class="numbers">
+            =
+            <input type="number" name="" id="number" class="numbers" style="width: 120px" autofocus>
+        </label>
+        <button id="answer" class="numbers">Ответить</button>
+    </div>
+    <div class="results">
+        <div id="message"></div>
+        <div id="resList"></div>
     </div>
 </div>
 <script src="script.js"></script>

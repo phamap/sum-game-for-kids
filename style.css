@@ -20,10 +20,10 @@ h1 {
 .numbers {
     display: inline-block;
     margin: 0 10px;
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
 
-input{
+input {
     background: transparent;
     border: none;
     border-bottom: 1px solid #000;
@@ -34,25 +34,45 @@ input:focus {
     outline: none;
 }
 
-.monster {
+.battle {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    position: relative;
+    width: 656px;
+    height: 344px;
+    background: url('assets/bg.gif') center/cover;
+    margin: 20px auto;
 }
 
-.img {
+.minotaur {
     min-height: 300px;
     min-width: 260px;
-    background: url('assets/Minotaur - Sprite Sheet.png');
+    background: url('assets/Minotaur - Sprite Sheet (2).png');
     background-size: 3000px;
     background-position: -40px 10px;
+    position: absolute;
+    left: 60px;
+    bottom: -55px;
 }
 
-.img.lose {
+.fox {
+    min-height: 70px;
+    min-width: 70px;
+    background: url('assets/Fox Sprite Sheet.png');
+    background-size: 1500px;
+    background-position: -20px -40px;
+    position: absolute;
+    right: 145px;
+    bottom: 48px;
+    transform: scale(-1, 1);
+}
+
+.minotaur.lose {
     background-position: -1220px -2525px;
 }
 
-.img.win {
+.minotaur.win {
     background-position: 0 -830px;
 }
 
@@ -72,14 +92,13 @@ input:focus {
     color: red;
 }
 
-.result-list{
+.result-list {
     list-style-type: none;
     padding: 0;
     margin: 20px 0 30px;
 }
 
 .exercise {
-    margin-top: 85px;
 }
 
 @keyframes monster-idle {
@@ -101,4 +120,32 @@ input:focus {
     100% {
         background-position: -1540px -270px;
     }
+}
+
+
+#answer {
+    box-shadow: inset 0 1px 0 0 #a4e271;
+    background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    background-color: #89c403;
+    border-radius: 6px;
+    border: 1px solid #74b807;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #528009;
+}
+
+#answer:hover {
+    background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+    background-color: #77a809;
+}
+
+#answer:active {
+    position: relative;
+    top: 1px;
 }
