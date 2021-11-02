@@ -63,6 +63,12 @@
     location.reload();
   });
 
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      onAnswer(results);
+    }
+  });
+
   startIdleAnimation();
 
   function startIdleAnimation() {
